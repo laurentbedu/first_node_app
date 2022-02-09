@@ -1,5 +1,7 @@
 const express = require("express");
-const router = express.Router();
+const categoryRouter = require('./api/routers/category.router');
+const routers = require('./api/routers');
+console.log(routers)
 
 const app = express();
 
@@ -9,19 +11,12 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
-app.use(router);
+app.use(express.json());
 
-router.route("/")
-.get((req, res) => {
-  res.send((req.method + req.path));
-})
-.post((req, res) => {
-  res.send((req.method + req.path));
-});
-
-router.route("/test").get((req, res) => {
-    res.send((req.method + req.path));
-});
+// for(let route in routers){
+//   app.use(`/${route}`, routers[route]);
+// }
+// app.use('/category', categoryRouter);
 
 const PORT = 5000;
 app.listen(PORT, () => {
