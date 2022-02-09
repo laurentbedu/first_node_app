@@ -1,10 +1,26 @@
-GET http://localhost:5000/gender/1
-# GET http://localhost:5000/test
+GET http://localhost:5000/gender
 
-# POST http://localhost:5000/category HTTP/1.1
+# GET http://localhost:5000/gender/1
+
+# POST http://localhost:5000/category
 # content-type: application/json
 
 # {
-#     "title": "Promo",
-#     "desc": "En promo ..."
+#     "title": "En Promo",
+#     "description": "Plein d'articles en promo ..."
 # }
+
+
+# PUT http://localhost:5000/category/1
+# content-type: application/json
+
+# {
+#     "title": "En Promo",
+#     "description": "Plein d'articles en promo ..."
+# }
+
+# PATCH http://localhost:5000/gender/1
+
+# DELETE http://localhost:5000/category/1
+
+

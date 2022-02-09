@@ -1,28 +1,36 @@
-const express = require('express');
-const router = express.Router();
+const BaseRouter = require('./base.router');
 
-router.get('/',(req, res) => {
-    res.send("get all genders");
-})
+class GenderRouter extends BaseRouter{
 
-router.get('/:id',(req, res) => {
-    res.send("get gender by id=" + req.params.id);
-})
+}
 
-router.post('/',(req, res) => {
-    res.send("create new gender with : " + JSON.stringify(req.body));
-})
+module.exports = GenderRouter;
 
-router.put('/:id',(req, res) => {
-    res.send("update gender by id=" + req.params.id + " with : " + JSON.stringify(req.body));
-})
+// const express = require('express');
+// const router = express.Router();
 
-router.patch('/:id',(req, res) => {
-    res.send("soft delete gender by id=" + req.params.id);
-})
+// router.get('/',(req, res) => {
+//     res.send("get all genders");
+// })
 
-router.delete('/:id',(req, res) => {
-    res.send("hard delete gender by id=" + req.params.id);
-})
+// router.get('/:id',(req, res) => {
+//     res.send("get gender by id=" + req.params.id);
+// })
 
-module.exports = router;
+// router.post('/',(req, res) => {
+//     res.send("create new gender with : " + JSON.stringify(req.body));
+// })
+
+// router.put('/:id',(req, res) => {
+//     res.send("update gender by id=" + req.params.id + " with : " + JSON.stringify(req.body));
+// })
+
+// router.patch('/:id',(req, res) => {
+//     res.send("soft delete gender by id=" + req.params.id);
+// })
+
+// router.delete('/:id',(req, res) => {
+//     res.send("hard delete gender by id=" + req.params.id);
+// })
+
+// module.exports = router;

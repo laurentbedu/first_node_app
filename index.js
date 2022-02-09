@@ -1,5 +1,5 @@
 const express = require("express");
-const categoryRouter = require('./api/routers/category.router');
+// const categoryRouter = require('./api/routers/category.router');
 const routers = require('./api/routers');
 console.log(routers)
 
@@ -13,9 +13,9 @@ app.use(cors(corsOptions));
 
 app.use(express.json());
 
-// for(let route in routers){
-//   app.use(`/${route}`, routers[route]);
-// }
+for(let route in routers){
+  app.use(`/${route}`, new routers[route]().router);
+}
 // app.use('/category', categoryRouter);
 
 const PORT = 5000;
