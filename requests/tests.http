@@ -15,8 +15,7 @@ GET http://localhost:5000/gender
 # content-type: application/json
 
 # {
-#     "title": "En Promo",
-#     "description": "Plein d'articles en promo ..."
+#     "title": "En Solde"
 # }
 
 # PATCH http://localhost:5000/gender/1

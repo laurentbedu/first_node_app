@@ -12,7 +12,7 @@ app.use(cors(corsOptions));
 
 app.use(express.json());
 
-for(let route in routers){
+for(const route in routers){
   app.use(`/${route}`, new routers[route]().router);
 }
 

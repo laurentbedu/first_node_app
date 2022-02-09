@@ -11,14 +11,18 @@ class BaseRouter{
     }
 
     initializeRoutes = () => {
+
+        // /category ou /gender
         this.router.get('/',(req, res) => {
             res.send(`get all rows of ${this.table}`);
         })
         
+        // /category/1
         this.router.get('/:id',(req, res) => {
             res.send(`get ${this.table} row with id=${req.params.id}`);
         })
 
+        
         this.router.post('/',(req, res) => {
             res.send(`create new ${this.table} row with values : ${JSON.stringify(req.body)}`);
         })
