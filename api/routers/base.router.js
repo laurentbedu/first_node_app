@@ -1,4 +1,5 @@
 const Router = require('express').Router;
+const controllers = require('../controllers');
 
 class BaseRouter{
 
@@ -6,7 +7,7 @@ class BaseRouter{
         this.router = Router();
         this.name = this.constructor.name.replace(`Router`,``);
         this.table = this.name.toLowerCase();
-
+        this.controller = new controllers[this.table]();
         this.initializeRoutes();
     }
 
@@ -14,7 +15,8 @@ class BaseRouter{
 
         // /category ou /gender
         this.router.get('/',(req, res) => {
-            res.send(`get all rows of ${this.table}`);
+            const data = this.controller.getAll();
+            res.send(data);
         })
         
         // /category/1
@@ -22,7 +24,7 @@ class BaseRouter{
             res.send(`get ${this.table} row with id=${req.params.id}`);
         })
 
-        
+
         this.router.post('/',(req, res) => {
             res.send(`create new ${this.table} row with values : ${JSON.stringify(req.body)}`);
         })
