@@ -1,6 +1,6 @@
-GET http://localhost:5000/category
+# GET http://localhost:5000/test
 
-# GET http://localhost:5000/gender/1
+GET http://localhost:5000/test/3
 
 # POST http://localhost:5000/category
 # content-type: application/json

@@ -14,14 +14,15 @@ class BaseRouter{
     initializeRoutes = () => {
 
         // /category ou /gender
-        this.router.get('/',(req, res) => {
-            const data = this.controller.getAll();
+        this.router.get('/', async (req, res) => {
+            const data = await this.controller.getAll();
             res.send(data);
         })
         
         // /category/1
-        this.router.get('/:id',(req, res) => {
-            res.send(`get ${this.table} row with id=${req.params.id}`);
+        this.router.get('/:id',async (req, res) => {
+            const data = await this.controller.getOne(req.params.id);
+            res.send(data);
         })
 
 
